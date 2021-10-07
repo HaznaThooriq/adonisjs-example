@@ -2,7 +2,7 @@
   "typescript": true,
   "commands": [
     "./commands",
-    "@adonisjs/core/build/commands",
+    "@adonisjs/core/build/commands/index.js",
     "@adonisjs/repl/build/commands"
   ],
   "exceptionHandlerNamespace": "App/Exceptions/Handler",
@@ -20,7 +20,8 @@
     "./providers/AppProvider",
     "@adonisjs/core",
     "@adonisjs/session",
-    "@adonisjs/view"
+    "@adonisjs/view",
+    "@adonisjs/shield"
   ],
   "metaFiles": [
     {

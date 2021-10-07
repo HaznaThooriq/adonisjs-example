@@ -11,13 +11,15 @@
 | ├── start/routes/cart.ts
 | ├── start/routes/customer.ts
 |
-| and then import them inside `start/routes/index.ts` as follows
+| and then import them inside `start/routes.ts` as follows
 |
-| import './cart'
-| import './customer'
+| import './routes/cart'
+| import './routes/customer''
 |
 */
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.on('/').render('welcome')
+Route.get('/', async ({ view }) => {
+  return view.render('welcome')
+})
