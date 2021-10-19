@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: adonis-js
+    container_name: adonis-js
+    restart: unless-stopped
+    # volumes:
+    #   - ./:/usr/src
+    ports:
+      - "3333:3333"
+
+  nginx:
+    image: nginx:alpine
+    container_name: adonis-js-nginx
+    restart: unless-stopped
+    ports:
+      - 8001:80
+    volumes:
+      - ./.docker/nginx:/etc/nginx/conf.d/
